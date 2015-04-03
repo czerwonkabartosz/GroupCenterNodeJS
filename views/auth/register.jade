@@ -1,0 +1,9 @@
+extends ./../layout
+
+block content
+  p Register
+  a(href='/login') Login
+  form(name="register", action="/register", method="post")
+    input(type="text", name="user")
+    input(type="password", name="pass")
+    input(type="submit", value="login")

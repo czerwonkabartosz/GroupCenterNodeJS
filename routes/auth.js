@@ -1,46 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-var Promise = require('bluebird');
-var bcrypt = Promise.promisifyAll(require('bcrypt'));
-
-var knex = require('knex')({
-    client: 'postgresql',
-    connection: {
-        database: 'group_center_node_db',
-        posrt: 5432,
-        user: 'bartoszczerwonka',
-        password: ''
-    }
-});
-
-var bookshelf = require('bookshelf')(knex);
-
-var User = bookshelf.Model.extend({
-    tableName: 'users'
-}, {
-
-    login: Promise.method(function (email, password) {
-        if (!email || !password) throw new Error('Email and password are both required');
-        return new this({email: email.toLowerCase().trim()}).fetch({require: true}).then(function (customer) {
-            if (bcrypt.compareSync(password, customer.get('password'))) {
-                return customer;
-            }
-
-            return null;
-        });
-    }),
-    register: Promise.method(function(user){
-        user.created_at = new Date();
-        user.updated_at = new Date()
-        user.password = bcrypt.hashSync(user.password, 10);
-
-        new User(user).save().then(function (model) {
-           return model;
-        });
-    })
-
-});
+var User = require('./../models/user');
 
 router.get('/login', function (req, res, next) {
     res.render('auth/login');
@@ -71,7 +32,7 @@ router.post('/register', function (req, res, next) {
         if (users) {
             res.end();
         } else {
-            User.register(user).then(function(user){
+            User.register(user).then(function (user) {
                 res.redirect('/login');
             })
         }

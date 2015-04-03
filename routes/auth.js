@@ -8,16 +8,28 @@ router.get('/login', function (req, res, next) {
 });
 
 router.post('/login', function (req, res, next) {
-    var email = req.body.email;
-    var password = req.body.password;
 
-    User.login(email, password).then(function (a) {
-        if (a) {
-            res.send('test');
-        } else {
-            res.send('no');
-        }
-    });
+    req.assert('email', 'A valid email is required').isEmail();
+    req.assert('password', 'Password is required').notEmpty();
+
+    var errors = req.validationErrors();
+    if (errors) {
+        res.render('auth/login', {
+            errors: errors
+        });
+    } else {
+
+        var email = req.body.email;
+        var password = req.body.password;
+
+        User.login(email, password).then(function (a) {
+            if (a) {
+                res.send('test');
+            } else {
+                res.send('no');
+            }
+        });
+    }
 });
 
 router.get('/register', function (req, res, next) {

@@ -1,9 +1,13 @@
-extends ./../layout
+extends layout
 
 block content
-  p Register
-  a(href='/login') Login
-  form(name="register", action="/register", method="post")
-    input(type="text", name="user")
-    input(type="password", name="pass")
-    input(type="submit", value="login")
+    p Register
+    a(href='/login') Login
+    .container
+        form.form-signin(name="register", action="/register", method="post")
+            h2.form-signin-heading Please sign in
+            input.form-control(type='email', name='email', placeholder='Email address', required='', autofocus='')
+            input.form-control(type='password', name='password', placeholder='Password', required='')
+            input.form-control(type='text', name='first_name', placeholder='First name', required='')
+            input.form-control(type='text', name='last_name', placeholder='Last name', required='')
+            button.btn.btn-lg.btn-primary.btn-block(type='submit') Sign in

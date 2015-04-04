@@ -1,24 +1,36 @@
 extends layout
 
 block content
-    - function isEmptyObject(obj) {
-    -      var name;
-    -      for (name in obj) {
-    -        return false;
-    -      }
-    -      return true;
-    -    }
+    h2 Sign in
+    p Sign in using your registered account
+    form(name='login', action='/login', method='post')
+        .form-group
+            .input-group
+                span.input-group-addon
+                    i.fa.fa-user.fa-fw
+                input.form-control(name='email', type='email', placeholder='Email', required='', autofocus='')
+        .form-group
+            .input-group
+                span.input-group-addon
+                    i.fa.fa-lock.fa-fw
+                input.form-control(name='password', type='password', placeholder='Password', required='')
 
-    a(href='/register') Register
-    .container
-        - if (isEmptyObject(errors) == false)
-            p.errorMessage= "The following errors occurred:"
-            ul
-            - each error in errors
-                li= error.msg+" "+error.param
-        form.form-signin(name="login", action="/login", method="post")
-            h2.form-signin-heading Please sign in
-            input.form-control(type='email', name='email', placeholder='Email address', required='', autofocus='')
-            input.form-control(type='password', name='password', placeholder='Password')
+        .form-group
+            button.btn.btn-success(type='submit') Sign in
+        hr
+        .form-group
+            a.btn.btn-primary.btn-lg.btn-block(href='/register') Create account
 
-            button.btn.btn-lg.btn-primary.btn-block(type='submit') Sign in
+
+            //a(href='/register') Register
+            //    - if (isEmptyObject(errors) == false)
+            //        p.errorMessage= "The following errors occurred:"
+            //        ul
+            //        - each error in errors
+            //            li= error.msg+" "+error.param
+            //    form.form-signin(name="login", action="/login", method="post")
+            //        h2.form-signin-heading Please sign in
+            //        input.form-control(type='email', name='email', placeholder='Email address', required='', autofocus='')
+            //        input.form-control(type='password', name='password', placeholder='Password')
+            //
+            //        button.btn.btn-lg.btn-primary.btn-block(type='submit') Sign in

@@ -1,8 +1,30 @@
 doctype html
 html
-  head
-    title= title
-    link(rel='stylesheet', href='/libs/bootstrap/dist/css/bootstrap.css')
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    block content
+    head
+        title= title
+        link(rel='stylesheet', href='/libs/bootstrap/dist/css/bootstrap.css')
+        link(rel='stylesheet', href='/libs/fontawesome/css/font-awesome.css')
+        link(rel='stylesheet', href='/stylesheets/style.css')
+    body
+      nav.navbar.navbar-default.navbar-fixed-top
+        .container
+          .navbar-collapse.collapse
+            ul.nav.navbar-nav
+              li
+                a(href='') Groups
+              li
+                a(href='') My groups
+            ul.nav.navbar-nav.navbar-right
+              li
+                a(href='') Create group
+              li
+                a(href='')
+                  i.fa.fa-user.fa-fw
+                  | #{user.first_name + ' ' + user.last_name}
+              li
+                a(href='/logout')
+                  i.fa.fa-sign-out.fa-fw
+                  | Logout
+
+      .container
+        block content

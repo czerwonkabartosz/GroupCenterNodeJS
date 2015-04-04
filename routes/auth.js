@@ -18,15 +18,18 @@ router.post('/login', function (req, res, next) {
             errors: errors
         });
     } else {
-
-        var email = req.body.email;
+        var email
+            = req.body.email;
         var password = req.body.password;
 
-        User.login(email, password).then(function (a) {
-            if (a) {
-                res.send('test');
+        User.login(email, password).then(function (user) {
+            if (user) {
+                req.session.user = user;
+                res.redirect('/');
             } else {
-                res.send('no');
+                res.render('auth/login', {
+                    errors: errors
+                });
             }
         });
     }
@@ -49,6 +52,11 @@ router.post('/register', function (req, res, next) {
             })
         }
     });
+});
+
+router.get('/logout', function (req, res, next) {
+    req.session.destroy();
+    res.redirect('/');
 });
 
 module.exports = router;

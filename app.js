@@ -9,6 +9,7 @@ var session = require('express-session');
 
 var index = require('./routes/index');
 var auth = require('./routes/auth');
+var groups = require('./routes/groups');
 
 var authMiddleware = require('./middleware/auth');
 
@@ -29,7 +30,7 @@ app.use(session({
 }));
 
 app.use('/', auth);
-app.use('/', authMiddleware, index);
+app.use('/', authMiddleware, index, groups);
 
 
 app.use(function (req, res, next) {

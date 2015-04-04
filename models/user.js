@@ -2,7 +2,6 @@ var db = require('./db');
 var Promise = require('bluebird');
 var bcrypt = Promise.promisifyAll(require('bcrypt'));
 
-
 var User = db.Model.extend({
     tableName: 'users'
 }, {

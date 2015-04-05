@@ -3,3 +3,9 @@ block content
     .col-md-12
         h1 Create Group
 
+        form(name='create', action='/groups/create', method='post')
+            .form-group
+                input.form-control(name='name', type='text', placeholder='Name', required='', autofocus='')
+
+            button.btn.btn-success(type='submit') Create
+

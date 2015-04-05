@@ -1,9 +1,13 @@
-var db = require('./db');
 var Promise = require('bluebird');
 var bcrypt = Promise.promisifyAll(require('bcrypt'));
 
+var db = require('./db');
+
 var User = db.Model.extend({
-    tableName: 'users'
+    tableName: 'users',
+    groups: function(){
+        return this.belongsToMany(require('./group'), 'groups_users', 'group_id', 'user_id');
+    }
 }, {
 
     login: Promise.method(function (email, password) {

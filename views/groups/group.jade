@@ -1,0 +1,12 @@
+extends ../layout
+block content
+    .col-md-12
+        h1 GROUPS #{title}
+
+        p #{group.name}
+
+        ul
+            each val, index in group.users
+                li= val.first_name + ' ' + val.last_name
+
+

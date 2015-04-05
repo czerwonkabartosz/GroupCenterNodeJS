@@ -3,3 +3,8 @@ block content
     .col-md-12
         h1 GROUPS #{title}
 
+       ul
+         each val, index in groups
+            li
+               a(href='/groups/'+ val.id) #{val.name}
+

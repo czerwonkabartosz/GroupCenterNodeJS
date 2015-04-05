@@ -5,8 +5,8 @@ var db = require('./db');
 
 var Group = db.Model.extend({
     tableName: 'groups',
-    users: function(){
-        return this.belongsToMany(require('./user'), 'groups_users', 'user_id', 'group_id');
+    users: function () {
+        return this.belongsToMany(require('./user'), 'groups_users', 'group_id', 'user_id');
     }
 });
 

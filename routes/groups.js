@@ -37,7 +37,6 @@ router.post('/groups/create', function (req, res, next) {
     group.updated_at = new Date();
 
     new Group(group).save().then(function (model) {
-
         model.users().attach(req.user.id);
 
         res.redirect('/groups');

@@ -33,11 +33,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="groups.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="groups.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/routes/groups.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="23" column="91" selection-start-line="23" selection-start-column="91" selection-end-line="23" selection-end-column="91" />
+                <state vertical-scroll-proportion="0.58115184">
+                  <caret line="38" column="51" selection-start-line="38" selection-start-column="51" selection-end-line="38" selection-end-column="51" />
                   <folding />
                 </state>
               </provider>
@@ -53,11 +53,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="group.jade" pinned="false" current-in-tab="true">
+          <file leaf-file-name="group.jade" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/views/groups/group.jade">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.2356021">
-                  <caret line="9" column="56" selection-start-line="9" selection-start-column="56" selection-end-line="9" selection-end-column="56" />
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="12" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -100,7 +100,7 @@
             <entry file="file://$PROJECT_DIR$/models/group.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="8" column="51" selection-start-line="8" selection-start-column="51" selection-end-line="8" selection-end-column="51" />
+                  <caret line="8" column="80" selection-start-line="8" selection-start-column="80" selection-end-line="8" selection-end-column="80" />
                   <folding />
                 </state>
               </provider>
@@ -121,7 +121,10 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
                   <caret line="8" column="53" selection-start-line="5" selection-start-column="7" selection-end-line="8" selection-end-column="53" />
-                  <folding />
+                  <folding>
+                    <marker date="1428235634000" expanded="true" signature="23:188" placeholder="..." />
+                    <marker date="1428235634000" expanded="true" signature="84:188" placeholder="..." />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -199,10 +202,10 @@
         <option value="$PROJECT_DIR$/views/groups/create.jade" />
         <option value="$PROJECT_DIR$/middleware/auth.js" />
         <option value="$PROJECT_DIR$/models/user.js" />
+        <option value="$PROJECT_DIR$/views/groups/group.jade" />
         <option value="$PROJECT_DIR$/db/migrations/20150405130011_groups_users.js" />
         <option value="$PROJECT_DIR$/models/group.js" />
         <option value="$PROJECT_DIR$/routes/groups.js" />
-        <option value="$PROJECT_DIR$/views/groups/group.jade" />
       </list>
     </option>
   </component>
@@ -526,7 +529,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="61" />
+      <option name="time" value="64" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="NodeJSConfigurationType">
@@ -832,6 +835,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/groups/list.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="53" selection-start-line="5" selection-start-column="7" selection-end-line="8" selection-end-column="53" />
+          <folding>
+            <marker date="1428235634000" expanded="true" signature="23:188" placeholder="..." />
+            <marker date="1428235634000" expanded="true" signature="84:188" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/groups/group.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/db/migrations/20150405130011_groups_users.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2617801">
@@ -843,7 +865,7 @@
     <entry file="file://$PROJECT_DIR$/models/group.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="51" selection-start-line="8" selection-start-column="51" selection-end-line="8" selection-end-column="51" />
+          <caret line="8" column="80" selection-start-line="8" selection-start-column="80" selection-end-line="8" selection-end-column="80" />
           <folding />
         </state>
       </provider>
@@ -858,24 +880,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/groups.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="91" selection-start-line="23" selection-start-column="91" selection-end-line="23" selection-end-column="91" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/groups/list.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="53" selection-start-line="5" selection-start-column="7" selection-end-line="8" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/groups/group.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2356021">
-          <caret line="9" column="56" selection-start-line="9" selection-start-column="56" selection-end-line="9" selection-end-column="56" />
+        <state vertical-scroll-proportion="0.58115184">
+          <caret line="38" column="51" selection-start-line="38" selection-start-column="51" selection-end-line="38" selection-end-column="51" />
           <folding />
         </state>
       </provider>

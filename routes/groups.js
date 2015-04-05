@@ -11,7 +11,6 @@ router.get('/groups', function (req, res, next) {
 });
 
 router.get('/groups/my', function (req, res, next) {
-
     new User({id: req.user.id}).fetch({withRelated: ['groups']}).then(function (model) {
         res.render('groups/list', {groups: model.toJSON().groups});
     });

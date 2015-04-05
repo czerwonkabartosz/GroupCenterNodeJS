@@ -1,7 +1,13 @@
 var express = require('express');
 var router = express.Router();
 
+var React = require('react');
+var path = require('path');
+
 var User = require('./../models/user');
+
+
+require('node-jsx').install();
 
 router.get('/profile', function(req, res, next) {
 

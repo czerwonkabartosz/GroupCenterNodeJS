@@ -22,6 +22,21 @@ router.get('/groups/:id([0-9]+)', function (req, res, next) {
     });
 });
 
+router.get('/groups/:id([0-9]+)/users', function (req, res, next) {
+    Group.where({id: req.params.id}).fetch({withRelated: ['users']}).then(function (group) {
+        res.render('groups/group-users', {group: group.toJSON()});
+    });
+});
+
+router.get('/groups/:id([0-9]+)/users/add', function (req, res, next) {
+    //TODO Asyncjs
+    Group.where({id: req.params.id}).fetch({withRelated: ['users']}).then(function (group) {
+        User.fetchAll().then(function (users) {
+            res.render('groups/group-users-add', {group: group.toJSON(), users: users.toJSON()});
+        })
+    });
+});
+
 router.get('/groups/create', function (req, res, next) {
     res.render('groups/create');
 });

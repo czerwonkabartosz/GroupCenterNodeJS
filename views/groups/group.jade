@@ -5,8 +5,8 @@ block content
 
         p #{group.name}
 
-        ul
-            each val, index in group.users
-                li= val.first_name + ' ' + val.last_name
+        a.btn.btn-success(href='/groups/'+ group.id + '/users') Manage users
+
+        p WIADOMOSCI
 
 
